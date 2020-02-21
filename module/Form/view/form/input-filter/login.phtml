@@ -1,0 +1,56 @@
+<?php
+$title = 'Login';
+$this->headTitle($title);
+
+$form = $this->form;
+$form->setName('login');
+$form->setAttributes([
+    'class' => 'form-horizontal',
+    'id' => 'login-form',
+    'action' => '#'
+]);
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="row">
+    <h2><?= $this->escapeHtml($title) ?></h2>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="form-group">
+            <?= $this->formLabel($form->get('email')); ?>
+            <div class="col-md-9">
+                <?php
+                echo $this->formElement($form->get('email'));
+                echo $this->formElementErrors($form->get('email'));
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <?= $this->formLabel($form->get('password')); ?>
+            <div class="col-md-9">
+                <?php
+                echo $this->formElement($form->get('password'));
+                echo $this->formElementErrors($form->get('password'));
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-3">
+                <?php
+                echo $this->formElement($form->get('remember'));
+                echo $this->formLabel($form->get('remember'));
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <?php
+            echo $this->formRow($form->get('btnSubmit'));
+            echo $this->form()->closeTag();
+            ?>
+
+        </div>
+        <?php
+        echo $this->form()->closeTag();
+        ?>
+    </div>
+</div>

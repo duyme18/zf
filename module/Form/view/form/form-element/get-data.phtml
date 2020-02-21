@@ -1,0 +1,30 @@
+<?php
+echo $this->headTitle('Data Form Page');
+$form = $this->form;
+$fullname = $form->get('fullname');
+$hidden = $form->get('hidden');
+$age = $form->get('number');
+$email = $form->get('email');
+$password = $form->get('password');
+$file = $form->get('file');
+$submit = $form->get('btnSubmit');
+$captcha = $form->get('captcha_image');
+$form->prepare();
+?>
+<div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+            <?= $this->form()->openTag($form); //<form> 
+            ?>
+            <?= $this->formRow($fullname); ?>
+            <?= $this->formRow($hidden); ?>
+            <?= $this->formRow($age); ?>
+            <?= $this->formRow($email); ?>
+            <?= $this->formRow($password); ?>
+            <?= $this->formRow($file); ?>
+            <br>
+            <?= $this->formRow($captcha); ?>
+            <?= $this->formRow($submit); ?>
+            <?= $this->form()->closeTag($form); //</form>
+            ?>
+    </div>
+</div>

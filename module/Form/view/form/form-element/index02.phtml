@@ -1,0 +1,60 @@
+<?php
+echo $this->headTitle('Data Form Page');
+$form = $this->form;
+$fullname = $form->get('fullname');
+$hidden = $form->get('hidden');
+$age = $form->get('number');
+$email = $form->get('email');
+$password = $form->get('password');
+$file = $form->get('file');
+$reset = $form->get('btnReset');
+$submit = $form->get('btnSubmit');
+$captcha = $form->get('captcha_image');
+$form->prepare();
+?>
+<div class="row">
+	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+        <?=$this->form()->openTag($form); // <form>?>
+        <?php
+        // echo $this->formLabel($fullname);
+        // echo $this->formText($fullname);
+        
+        // echo $this->formHidden($hidden);
+        
+        // echo $this->formLabel($age);
+        // echo $this->formNumber($age);
+        
+        // echo $this->formLabel($email);
+        // echo $this->formEmail($email);
+        
+        // echo $this->formLabel($password);
+        // echo $this->formPassword($password);
+        
+        echo $this->formLabel($fullname);
+        echo $this->formElement($fullname);
+        
+        echo $this->formLabel($fullname);
+        echo $this->formelement($fullname);
+        
+        echo $this->formLabel($password);
+        echo $this->formElement($password);
+        
+        echo $this->formLabel($age);
+        echo $this->formElement($age);
+        
+        echo $this->formLabel($email);
+        echo $this->formElement($email);
+        
+        echo $this->formLabel($file);
+        echo $this->formElement($file);
+        
+        echo $this->formLabel($captcha);
+        echo $this->formElement($captcha);
+        echo "<br>";
+        
+        echo $this->formButton($reset);
+        echo $this->formButton()->render($submit, 'Login');
+        ?>
+        <?=$this->form()->closeTag($form); // </form>?>
+    </div>
+</div>

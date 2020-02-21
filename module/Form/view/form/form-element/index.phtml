@@ -1,0 +1,51 @@
+WELCOM TO MODULE FORM!
+
+<?php
+echo $this->headTitle('Form Page');
+$form = $this->form;
+$fullname = $form->get('fullname');
+$hidden = $form->get('hidden');
+$age = $form->get('number');
+$email = $form->get('email');
+$password = $form->get('password');
+$gender = $form->get('gender');
+$select = $form->get('select');
+$textarea = $form->get('message');
+$file = $form->get('file');
+$checkbox = $form->get('checkbox');
+$multiCheckbox = $form->get('multiCheckbox');
+$color = $form->get('color');
+$date = $form->get('date');
+$range = $form->get('range');
+$reset = $form->get('btnReset');
+$submit = $form->get('btnSubmit');
+$captcha = $form->get('captcha_image');
+$form->prepare();
+?>
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+        <?= $this->form()->openTag($form); //<form> 
+        ?>
+        <?= $this->formRow($fullname); ?>
+        <?= $this->formRow($hidden); ?>
+        <?= $this->formRow($age); ?>
+        <?= $this->formRow($email); ?>
+        <?= $this->formRow($password); ?>
+        <?= $this->formRow($gender); ?>
+        <?= $this->formRow($select); ?>
+        <?= $this->formRow($textarea); ?>
+        <?= $this->formRow($file); ?>
+        <br>
+        <?= $this->formRow($checkbox); ?>
+        <?= $this->formRow($multiCheckbox); ?>
+        <?= $this->formRow($color); ?>
+        <br>
+        <?= $this->formRow($date); ?>
+        <?= $this->formRow($range); ?>
+        <?= $this->formRow($reset); ?>
+        <?= $this->formRow($submit); ?>
+        <?= $this->formRow($captcha); ?>
+        <?= $this->form()->closeTag($form); //</form>
+        ?>
+    </div>
+</div>

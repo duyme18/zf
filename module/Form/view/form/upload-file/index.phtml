@@ -1,0 +1,27 @@
+<?php
+$title = 'Upload File';
+$this->headTitle($title);
+
+$form = $this->form;
+$form->setAttributes([
+    'enctype' => 'multipart/form-data',
+    'action' => $this->url('upload-file', [
+        'controller' => 'Controller\UploadFileController',
+        'action' => 'index'
+    ]),
+    'method' => 'POST'
+]);
+
+$form->prepare();
+?>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h2><?= $this->escapeHtml($title) ?></h2>
+        <?php
+        echo $this->form()->openTag($form);
+        echo $this->formRow($form->get('file-upload'));
+        echo $this->formRow($form->get('btnSubmit'));
+        echo $this->form()->closeTag();
+        ?>
+    </div>
+</div>
